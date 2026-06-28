@@ -181,7 +181,7 @@ const MessagesScreen = () => {
                     <View className={`flex-1 ${message.fromUser ? "items-end" : ""}`}>
                       <View
                         className={`rounded-2xl px-4 py-3 max-w-xs ${
-                          message.fromUser ? "bg-blue-500" : "bg-gray-100"
+                          message.fromUser ? "bg-[#1da1f2]" : "bg-gray-100"
                         }`}
                       >
                         <Text className={message.fromUser ? "text-white" : "text-gray-900"}>
@@ -210,7 +210,7 @@ const MessagesScreen = () => {
               <TouchableOpacity
                 onPress={sendMessage}
                 className={`size-10 rounded-full items-center justify-center ${
-                  newMessage.trim() ? "bg-blue-500" : "bg-gray-300"
+                  newMessage.trim() ? "bg-[#1da1f2]" : "bg-gray-300"
                 }`}
                 disabled={!newMessage.trim()}
               >
