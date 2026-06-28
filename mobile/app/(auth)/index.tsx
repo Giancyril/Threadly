@@ -5,7 +5,7 @@ export default function Index() {
   const { handleSocialAuth, isLoading } = useSocialAuth();
 
   return (
-    <View className="flex-1 bg-black">
+    <View className="flex-1 bg-white">
       <View className="flex-1 px-8 justify-between">
         <View className="flex-1 justify-center">
           {/* DEMO IMAGE */}
@@ -21,12 +21,19 @@ export default function Index() {
           <View className="flex-col gap-3">
             {/* GOOGLE SIGNIN BTN */}
             <TouchableOpacity
-              className="flex-row items-center justify-center bg-white rounded-full py-3.5 px-6"
+              className="flex-row items-center justify-center bg-white border border-gray-300 rounded-full py-3.5 px-6"
               onPress={() => handleSocialAuth("oauth_google")}
               disabled={isLoading}
+              style={{
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 1 },
+                shadowOpacity: 0.1,
+                shadowRadius: 2,
+                elevation: 1,
+              }}
             >
               {isLoading ? (
-                <ActivityIndicator size="small" color="#000" />
+                <ActivityIndicator size="small" color="#1DA1F2" />
               ) : (
                 <View className="flex-row items-center justify-center">
                   <Image
@@ -35,14 +42,14 @@ export default function Index() {
                     style={{ width: 36, height: 36 }}
                     resizeMode="contain"
                   />
-                  <Text className="text-black font-bold text-base">Continue with Google</Text>
+                  <Text className="text-gray-900 font-bold text-base">Continue with Google</Text>
                 </View>
               )}
             </TouchableOpacity>
 
             {/* APPLE SIGNIN ICON */}
             <TouchableOpacity
-              className="flex-row items-center justify-center bg-black border border-zinc-700 rounded-full py-3.5 px-6"
+              className="flex-row items-center justify-center bg-black rounded-full py-3.5 px-6"
               onPress={() => handleSocialAuth("oauth_apple")}
               disabled={isLoading}
             >
@@ -63,12 +70,12 @@ export default function Index() {
           </View>
 
           {/* Terms and Privacy */}
-          <Text className="text-center text-zinc-500 text-xs leading-5 mt-8 px-2">
-            By signing up, you agree to our <Text className="text-[#1d9bf0]">Terms of Service</Text>
+          <Text className="text-center text-gray-500 text-xs leading-5 mt-8 px-2">
+            By signing up, you agree to our <Text className="text-[#1DA1F2]">Terms of Service</Text>
             {", "}
-            <Text className="text-[#1d9bf0]">Privacy Policy</Text>
+            <Text className="text-[#1DA1F2]">Privacy Policy</Text>
             {", and "}
-            <Text className="text-[#1d9bf0]">Cookie Use</Text>.
+            <Text className="text-[#1DA1F2]">Cookie Use</Text>.
           </Text>
         </View>
       </View>
