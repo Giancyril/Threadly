@@ -38,7 +38,7 @@ const ProfileScreens = () => {
     refetch: refetchProfile,
   } = useProfile();
 
-  if (isLoading) {
+  if (isLoading || !currentUser) {
     return (
       <View className="flex-1 bg-white items-center justify-center">
         <ActivityIndicator size="large" color="#1DA1F2" />
