@@ -15,7 +15,7 @@ export default function RootLayout() {
           <Stack.Screen name="(auth)" />
           <Stack.Screen name="(tabs)" />
         </Stack>
-        <StatusBar style="light" />
+        <StatusBar style="dark" />
       </QueryClientProvider>
     </ClerkProvider>
   );
