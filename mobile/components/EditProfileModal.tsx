@@ -39,7 +39,7 @@ const EditProfileModal = ({
     <Modal visible={isVisible} animationType="slide" presentationStyle="pageSheet">
       <View className="flex-row items-center justify-between px-4 py-3 border-b border-gray-100">
         <TouchableOpacity onPress={onClose}>
-          <Text className="text-blue-500 text-lg">Cancel</Text>
+          <Text className="text-[#1DA1F2] text-lg">Cancel</Text>
         </TouchableOpacity>
 
         <Text className="text-lg font-semibold">Edit Profile</Text>
@@ -52,7 +52,7 @@ const EditProfileModal = ({
           {isUpdating ? (
             <ActivityIndicator size="small" color="#1DA1F2" />
           ) : (
-            <Text className="text-blue-500 text-lg font-semibold">Save</Text>
+            <Text className="text-[#1DA1F2] text-lg font-semibold">Save</Text>
           )}
         </TouchableOpacity>
       </View>
