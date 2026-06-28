@@ -31,7 +31,7 @@ const CommentsModal = ({ selectedPost, onClose }: CommentsModalProps) => {
       {/* MODAL HEADER */}
       <View className="flex-row items-center justify-between px-4 py-3 border-b border-gray-100">
         <TouchableOpacity onPress={handleClose}>
-          <Text className="text-blue-500 text-lg">Close</Text>
+          <Text className="text-[#1da1f2] text-lg">Close</Text>
         </TouchableOpacity>
         <Text className="text-lg font-semibold">Comments</Text>
         <View className="w-12" />
@@ -121,7 +121,7 @@ const CommentsModal = ({ selectedPost, onClose }: CommentsModalProps) => {
 
                 <TouchableOpacity
                   className={`px-4 py-2 rounded-lg self-start ${
-                    commentText.trim() ? "bg-blue-500" : "bg-gray-300"
+                    commentText.trim() ? "bg-[#1da1f2]" : "bg-gray-300"
                   }`}
                   onPress={() => createComment(selectedPost._id)}
                   disabled={isCreatingComment || !commentText.trim()}
