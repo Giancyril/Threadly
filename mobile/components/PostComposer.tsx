@@ -74,7 +74,7 @@ const PostComposer = () => {
 
           <TouchableOpacity
             className={`px-6 py-2 rounded-full ${
-              content.trim() || selectedImage ? "bg-blue-500" : "bg-gray-300"
+              content.trim() || selectedImage ? "bg-[#1da1f2]" : "bg-gray-300"
             }`}
             onPress={createPost}
             disabled={isCreating || !(content.trim() || selectedImage)}
@@ -87,7 +87,7 @@ const PostComposer = () => {
                   content.trim() || selectedImage ? "text-white" : "text-gray-500"
                 }`}
               >
-                Post
+                Tweet
               </Text>
             )}
           </TouchableOpacity>
