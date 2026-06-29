@@ -10,7 +10,7 @@ interface NotificationCardProps {
 
 const NotificationCard = ({ notification, onDelete }: NotificationCardProps) => {
   const getNotificationText = () => {
-    const name = `${notification.from.firstName} ${notification.from.lastName}`;
+    const name = `${notification.from?.firstName || "Someone"} ${notification.from?.lastName || ""}`;
     switch (notification.type) {
       case "like":
         return `${name} liked your post`;
@@ -52,7 +52,7 @@ const NotificationCard = ({ notification, onDelete }: NotificationCardProps) => 
       <View className="flex-row p-4">
         <View className="relative mr-3">
           <Image
-            source={{ uri: notification.from.profilePicture }}
+            source={{ uri: notification.from?.profilePicture || "" }}
             className="size-12 rounded-full"
             style={{ width: 48, height: 48 }}
           />
@@ -67,9 +67,9 @@ const NotificationCard = ({ notification, onDelete }: NotificationCardProps) => 
             <View className="flex-1">
               <Text className="text-gray-900 text-base leading-5 mb-1">
                 <Text className="font-semibold">
-                  {notification.from.firstName} {notification.from.lastName}
+                  {notification.from?.firstName} {notification.from?.lastName}
                 </Text>
-                <Text className="text-gray-500"> @{notification.from.username}</Text>
+                <Text className="text-gray-500"> @{notification.from?.username}</Text>
               </Text>
               <Text className="text-gray-700 text-sm mb-2">{getNotificationText()}</Text>
             </View>

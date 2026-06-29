@@ -13,7 +13,7 @@ interface PostCardProps {
 }
 
 const PostCard = ({ currentUser, onDelete, onLike, post, isLiked, onComment }: PostCardProps) => {
-  const isOwnPost = post.user._id === currentUser._id;
+  const isOwnPost = post.user?._id === currentUser?._id;
 
   const handleDelete = () => {
     Alert.alert("Delete Post", "Are you sure you want to delete this post?", [
@@ -30,7 +30,7 @@ const PostCard = ({ currentUser, onDelete, onLike, post, isLiked, onComment }: P
     <View className="border-b border-gray-100 bg-white">
       <View className="flex-row p-4">
         <Image
-          source={{ uri: post.user.profilePicture || "" }}
+          source={{ uri: post.user?.profilePicture || "" }}
           className="w-12 h-12 rounded-full mr-3"
           style={{ width: 48, height: 48 }}
         />
@@ -39,10 +39,10 @@ const PostCard = ({ currentUser, onDelete, onLike, post, isLiked, onComment }: P
           <View className="flex-row items-center justify-between mb-1">
             <View className="flex-row items-center">
               <Text className="font-bold text-gray-900 mr-1">
-                {post.user.firstName} {post.user.lastName}
+                {post.user?.firstName} {post.user?.lastName}
               </Text>
               <Text className="text-gray-500 ml-1">
-                @{post.user.username} · {formatDate(post.createdAt)}
+                @{post.user?.username} · {formatDate(post.createdAt)}
               </Text>
             </View>
             {isOwnPost && (
