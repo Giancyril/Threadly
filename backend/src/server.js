@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { clerkMiddleware } from "@clerk/express";
+import dns from "node:dns";
+
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 import userRoutes from "./routes/user.route.js";
 import postRoutes from "./routes/post.route.js";
